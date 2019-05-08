@@ -1,0 +1,56 @@
+@import 'styleguide';
+
+.ProgressBarWrap {
+    width: 80%;
+    background-color: $grey20;
+    border-radius: 10px;
+
+    .Filled {
+        position: relative;
+        background-color: $lightOrange;
+        height: 1em;
+        border-radius: 10px;
+    }
+
+    .ProgressDotWrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 100%;
+        float: left;
+
+        &.Inactive {
+            float: right;
+        }
+
+        .ProgressDot {
+            border-radius: 50%;
+            width: 6px;
+            height: 6px;
+            background-color: $darkOrange;
+            z-index: 1;
+
+            &.Inactive {
+                background-color: $grey40;
+            }
+        }
+    }
+
+    .CurrentFraction {
+        background-color: $darkOrange;
+        color: $white;
+        position: absolute;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        width: 40px;
+        height: 100%;
+        font-size: $intermediateSmall;
+    }
+
+    @media (max-width: $maxMobile) {
+        width: 90%;
+    }
+}

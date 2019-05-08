@@ -13,3 +13,13 @@ Advanced Custom Components
 * Can be configured to look like this:
 
 ![Dropdown](demo-images/dropdown.png)
+
+### Dynamic Progress Bar ###
+
+* Configurable progress bar SFC showing current status as a fraction, like 3/4 etc.
+
+* Consists of filled and remaining portions.
+
+* Has active and inactive dots.
+
+![Progress](demo-images/progress.png)

@@ -1,0 +1,125 @@
+@import 'styleguide';
+/* variables defined in styleguide */
+
+.AccordionWrap {
+    &.Section {
+        position: relative;
+        width: 100%;
+        color: $primary;
+    }
+    &.Section.Open {
+        .ToggleButton {
+            &:before,
+            &:after {
+                height: 14px;
+            }
+            &:before {
+                transform: translate(0%, -50%) rotate(-45deg);
+            }
+            &:after {
+                transform: translate(0%, -50%) rotate(45deg);
+            }
+        }
+    }
+    .ContentWrap {
+        max-height: 0;
+        overflow: hidden;
+        transition: all .2s ease-in;
+        &.Open {
+            max-height: auto;
+        }
+    }
+    .SectionHead {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        text-align: left;
+        overflow: hidden;
+        cursor: pointer;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        padding: 1em;
+        background-color: $grey10;
+        border-top: 1px solid $grey20;
+        border-bottom: 1px solid $grey20;
+        outline: none;
+        &:before {
+            content: url(../Assets/SVG/plus.svg);
+            position: relative;
+            font-weight: $regular;
+            font-size: 2em;
+            margin-right: 1em;
+            bottom: 5px;
+        }
+        &.Active {
+            &:before {
+                content: url(../Assets/SVG/minus.svg);
+                bottom: 10px;
+            }
+        }
+        &.NoTopBorder {
+            border-top: unset;
+        }
+        &.NotLastItem {
+            border-bottom: unset;
+        }
+        .CustomHeader {
+            width: 100%;
+        }
+        > div {
+            &.FlexWrapper {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+            }
+            .Title {
+                font-weight: $bold;
+            }
+            .RightLabel {
+                font-weight: $bold;
+                color: $black;
+                margin-right: 1.5em;
+            }
+        }
+    }
+    &.Accordion {
+        &.Section {
+            color: $grey60;
+            @media (max-width: $maxMobile) {
+                font-size: $intermediateSmall;
+            }
+        }
+        .ContentWrap {
+            padding: 0 0.5em;
+        }
+        .SectionHead {
+            background-color: $white;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            &:before {
+                margin-right: .5em;
+                content: '';
+                height: 0.3em;
+                width: 0.3em;
+                border-style: solid;
+                border-color: #4A4A4A;
+                border-width: 0px 2px 2px 0px;
+                transform: rotate(45deg);
+                bottom: 0;
+            }
+            &.Active {
+                color: $black;
+                bottom: 0;
+                border-bottom: 0;
+                &:before {
+                    border-color: $black;
+                    transform: rotate(-135deg);
+                    bottom: -6px;
+                }
+            }
+            @media (max-width: $maxMobile) {
+                padding: 1.5em 1.25em;
+            }
+        }
+    }
+}

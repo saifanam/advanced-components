@@ -1,0 +1,94 @@
+@import 'styleguide';
+
+/* variables defined in styleguide */
+
+.Dropdown {
+    position: relative;
+    .DropdownToggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+        width: 100%;
+        background: $white;
+        padding: .7em 1em 0.4em 0;
+        font-size: $normal;
+        border-bottom: 1px solid $grey40;
+        outline: none;
+        &.ActiveButton {
+            border-radius: 10px 10px 0 0;
+        }
+        &.DropdownError {
+            border-bottom: 2px solid $error;
+        }
+        .FloatingLabel {
+            position: absolute;
+            top: -10px;
+            font-size: $small;
+            left: 0;
+            color: $grey60;
+        }
+        @media (max-width: $maxMobile) {
+            font-size: $normal;
+        }
+    }
+    .DropdownMenu {
+        display: none;
+        position: absolute;
+        margin: 0;
+        width: 100%;
+        background-color: $white;
+        max-height: 220px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        outline: 0;
+        top: 100%;
+        left: 0;
+        padding: 0;
+        min-width: 160px;
+        border-left: 1px solid $grey40;
+        text-align: left;
+        list-style: none;
+        &.Active {
+            display: block;
+            z-index: 99;
+            border-right: 1px solid $grey40;
+        }
+    }
+    .DropdownList {
+        position: relative;
+        cursor: pointer;
+        border-bottom: 1px solid $grey40;
+        font-size: $small;
+        width: calc(100% + 1px);
+        &:hover {
+            background-color: $grey40;
+        }
+        .DropdownListButton {
+            width: 100%;
+            padding: 1em;
+            text-align: left;
+            &.Inactive {
+                cursor: not-allowed;
+            }
+            .DropdownLabel {
+                &.Inactive {
+                    color: $grey60;
+                }
+            }
+        }
+    }
+    .DropdownIcon {
+        height: 0.6em;
+        width: 0.6em;
+        border-style: solid;
+        border-color: $grey80;
+        border-width: 0px 2px 2px 0px;
+        transform: rotate(45deg);
+    }
+    .Error {
+        color: $error;
+        font-size: $extraSmall;
+        padding-top: 5px;
+    }
+}
